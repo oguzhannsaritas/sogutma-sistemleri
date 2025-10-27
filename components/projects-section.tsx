@@ -88,7 +88,7 @@ export function ProjectsSection() {
         <motion.section
             ref={ref}
             id="projeler"
-            className="py-20 bg-white relative overflow-hidden"
+            className="py-20 bg-white relative overflow-hidden "
             initial="hidden"
             animate={controls}
         >
