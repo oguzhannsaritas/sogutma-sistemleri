@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -20,31 +21,51 @@ export default function KurumsalPage() {
 
                 {/* Content */}
                 <div className="container relative z-10 mx-auto px-4 py-16 md:py-24">
-                    <div className="max-w-4xl">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                            Frigocan Soğutma
-                        </h1>
+                    {/* grid: mobilde tek kolon (metin üstte img altta), md'de 2 kolon (metin solda img sağda) */}
+                    <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                        {/* SOL: metin */}
+                        <div className="max-w-2xl">
+                            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
+                                Frigocan Soğutma
+                            </h1>
 
-                        <div className="space-y-6 text-white/95 text-lg md:text-xl leading-relaxed">
-                            <p>
-                                Endüstriyel soğutma alanında faaliyet göstermekte olup, anahtar teslim soğuk hava deposu, montaj, montaj
-                                sonrası teknik servislik konularında uzman mühendis ve deneyimli kadrosuyla hizmet vermektedir.
-                            </p>
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                                <p>
+                                    Endüstriyel soğutma alanında faaliyet göstermekte olup, anahtar teslim soğuk hava deposu, montaj,
+                                    montaj sonrası teknik servislik konularında uzman mühendis ve deneyimli kadrosuyla hizmet vermektedir.
+                                </p>
 
-                            <p>
-                                Gıda muhafazası ve klimatik test odaları ile hizmet verdiği firmalar portföyünde; savunma sanayinin öncü
-                                kuruluşları ve her türlü gıda üreticileri, toptancıları, zincir marketler yer almaktadır.
-                            </p>
+                                <p>
+                                    Gıda muhafazası ve klimatik test odaları ile hizmet verdiği firmalar portföyünde; savunma sanayinin
+                                    öncü kuruluşları ve her türlü gıda üreticileri, toptancıları, zincir marketler yer almaktadır.
+                                </p>
 
-                            <p>
-                                Müşterilerine beklentilerinin de üzerinde kaliteli hizmet sunmayı ilke edinen Frigocan Soğutma; yurt içi
-                                ve yurt dışı projelerinde her zaman bu ilkeler doğrultusunda hareket eder.
-                            </p>
+                                <p>
+                                    Müşterilerine beklentilerinin de üzerinde kaliteli hizmet sunmayı ilke edinen Frigocan Soğutma;
+                                    yurt içi ve yurt dışı projelerinde her zaman bu ilkeler doğrultusunda hareket eder.
+                                </p>
 
-                            <p>
-                                Gelişmiş teknolojiyi ustalıkla kullanmak suretiyle ihtiyaçları zamanında ve eksiksiz olarak karşılayan
-                                firmamız, kusursuz bir şekilde hizmet vermeyi ilk önceliği olarak kabul eder.
-                            </p>
+                                <p>
+                                    Gelişmiş teknolojiyi ustalıkla kullanmak suretiyle ihtiyaçları zamanında ve eksiksiz olarak karşılayan
+                                    firmamız, kusursuz bir şekilde hizmet vermeyi ilk önceliği olarak kabul eder.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* SAĞ: görsel (mobilde metnin altında çıkacak çünkü grid tek kolona düşüyor) */}
+                        <div className="w-full">
+                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_-10px_rgba(0,0,0,0.8)]">
+                                <Image
+                                    src="/5.jpg" // public/kurumsal-hero.jpg koy
+                                    alt="Frigocan üretim tesisi / soğuk hava deposu uygulaması"
+                                    fill
+                                    sizes="(min-width: 768px) 50vw, 100vw"
+                                    className="object-cover"
+                                    priority
+                                />
+                                {/* hafif overlay shine, görseli kurumsal renge bağlayalım */}
+                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-white/5 pointer-events-none" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,9 +80,9 @@ export default function KurumsalPage() {
             <section className="py-16 md:py-24 bg-muted/30">
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        <div className="bg-card p-8 rounded-lg shadow-sm border border-border">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-card p-6 md:p-8 rounded-lg shadow-sm border border-border">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                                <svg className="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -70,15 +91,15 @@ export default function KurumsalPage() {
                                     />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold text-foreground mb-3">Kalite Güvencesi</h3>
-                            <p className="text-muted-foreground leading-relaxed">
+                            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">Kalite Güvencesi</h3>
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                                 En son teknoloji makineler ve uluslararası kalite standartları ile güvenilir çözümler sunuyoruz.
                             </p>
                         </div>
 
-                        <div className="bg-card p-8 rounded-lg shadow-sm border border-border">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-card p-6 md:p-8 rounded-lg shadow-sm border border-border">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                                <svg className="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -87,15 +108,15 @@ export default function KurumsalPage() {
                                     />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold text-foreground mb-3">Uzman Kadro</h3>
-                            <p className="text-muted-foreground leading-relaxed">
+                            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">Uzman Kadro</h3>
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                                 Deneyimli mühendis ve teknik ekibimiz ile 7/24 hizmet ve destek sağlıyoruz.
                             </p>
                         </div>
 
-                        <div className="bg-card p-8 rounded-lg shadow-sm border border-border">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-card p-6 md:p-8 rounded-lg shadow-sm border border-border">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                                <svg className="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -104,8 +125,8 @@ export default function KurumsalPage() {
                                     />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold text-foreground mb-3">Geniş Portföy</h3>
-                            <p className="text-muted-foreground leading-relaxed">
+                            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">Geniş Portföy</h3>
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                                 Yurt içi ve yurt dışında yüzlerce başarılı proje ile sektörde lider konumdayız.
                             </p>
                         </div>

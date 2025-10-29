@@ -111,7 +111,7 @@ export function Footer() {
                             </p>
                             <p className="flex items-center gap-2">
                                 <Mail className="h-4 w-4" />
-                                info@tamgucsogutma.com.tr
+                                info@frigocan.com.tr
                             </p>
                         </div>
                     </motion.div>

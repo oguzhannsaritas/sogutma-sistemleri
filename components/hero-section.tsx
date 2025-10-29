@@ -6,11 +6,45 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 type Slide = { title1: string; title2?: string; image: string; alt: string }
+
 const SLIDES: Slide[] = [
-    { title1: "Her Zaman Taze", image: "/cold-room-refrigeration-unit.jpg", alt: "Soğuk Oda Ünitesi" },
-    { title1: "Enerji Verimli", title2: "", image: "/humidity-meter-temperature.jpg", alt: "Nem & Sıcaklık Takibi" },
-    { title1: "Endüstriyel Güvenilir", title2: "", image: "/industrial-cooling-units.jpg", alt: "Endüstriyel Soğutma" },
+    {
+        title1: "Hijyenik Depolama",
+        image: "/1.jpg",
+        alt: "Hijyenik Soğuk Depolama Alanı",
+    },
+    {
+        title1: "Hızlı Soğutma",
+        image: "/2.jpg",
+        alt: "Hızlı Soğutma Sistemi",
+    },
+    {
+        title1: "Endüstriyel Güvenilirlik",
+        image: "/3.jpg",
+        alt: "Endüstriyel Soğutma Ünitesi",
+    },
+    {
+        title1: "Enerji Verimli Çözüm",
+        image: "/4.jpg",
+        alt: "Enerji Tasarruflu Soğutma",
+    },
+    {
+        title1: "Her Zaman Taze",
+        image: "/5.jpg",
+        alt: "Soğuk Oda Ünitesi",
+    },
+    {
+        title1: "Akıllı Nem Kontrolü",
+        image: "/6.webp",
+        alt: "Nem & Sıcaklık Takibi",
+    },
+    {
+        title1: "Kesintisiz Soğuk Zincir",
+        image: "/7.png",
+        alt: "Endüstriyel Soğuk Zincir",
+    },
 ]
+
 
 const AUTOPLAY_MS = 5500
 const VARIANTS = ["wipe-diagonal", "reveal-zoom", "split-reveal"] as const

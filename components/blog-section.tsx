@@ -240,7 +240,7 @@ export function BlogSection() {
                                         <CardFooter className="p-4 md:p-6 pt-0">
                                             <Button
                                                 variant="ghost"
-                                                className="group text-xs sm:text-sm md:text-base text-accent hover:text-accent"
+                                                className="group text-xs sm:text-sm md:text-base text-accent hover:text-white"
                                             >
                                                 Blog detayı
                                                 <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
