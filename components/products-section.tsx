@@ -77,12 +77,28 @@ const maybe =
 export function ProductsSection() {
     const [currentProductIndex, setCurrentProductIndex] = useState(0)
     const [currentColdRoomIndex, setCurrentColdRoomIndex] = useState(0)
-    const itemsPerPage = 4
+    const [itemsPerPage, setItemsPerPage] = useState(4)
 
     const reduce = useReducedMotion()
     const controls = useAnimation()
     const ref = useRef<HTMLElement | null>(null)
     const inView = useInView(ref, { amount: 0.3 })
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setItemsPerPage(1)
+            } else if (window.innerWidth < 1024) {
+                setItemsPerPage(2)
+            } else {
+                setItemsPerPage(4)
+            }
+        }
+
+        handleResize()
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
 
     const totalProductPages = Math.ceil(products.length / itemsPerPage)
     const totalColdRoomPages = Math.ceil(coldRooms.length / itemsPerPage)
@@ -102,14 +118,14 @@ export function ProductsSection() {
             setCurrentProductIndex((prev) => (prev + itemsPerPage) % products.length)
         }, 7000)
         return () => clearInterval(interval)
-    }, [])
+    }, [itemsPerPage])
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentColdRoomIndex((prev) => (prev + itemsPerPage) % coldRooms.length)
         }, 5000)
         return () => clearInterval(interval)
-    }, [])
+    }, [itemsPerPage])
 
     const handleProductPrev = () => {
         setCurrentProductIndex((prev) => (prev - itemsPerPage + products.length) % products.length)
@@ -141,23 +157,23 @@ export function ProductsSection() {
         <motion.section
             ref={ref}
             id="urunler"
-            className="bg-white h-[900px] flex items-center justify-center"
+            className="snap-start snap-always bg-white min-h-screen  md:min-h-[700px] md:md:min-h-[800px] lg:h-[900px] flex items-center justify-center py-12 md:py-16 lg:py-20"
             initial="hidden"
             animate={controls}
         >
             <motion.div className="container mx-auto px-4" variants={container} initial={false}>
                 <Tabs defaultValue="urunler" className="w-full">
                     <motion.div variants={fadeUp} initial={false}>
-                        <TabsList className="relative bg-white top-[-80px] grid w-full max-w-md mx-auto grid-cols-2 mb-3">
+                        <TabsList className="relative bg-white top-0 md:top-[-80px] grid w-full max-w-md mx-auto grid-cols-2 mb-6 md:mb-3">
                             <TabsTrigger
                                 value="urunler"
-                                className="text-lg font-bold text-accent hover:bg-accent hover:text-white data-[state=active]:bg-accent data-[state=active]:text-white transition-colors rounded-md px-4 py-2 mr-4"
+                                className="text-base md:text-lg font-bold text-accent hover:bg-accent hover:text-white data-[state=active]:bg-accent data-[state=active]:text-white transition-colors rounded-md px-4 py-2 mr-4"
                             >
                                 ÜRÜNLER
                             </TabsTrigger>
                             <TabsTrigger
                                 value="soguk-odalar"
-                                className="text-lg font-bold text-accent hover:bg-accent hover:text-white data-[state=active]:bg-accent data-[state=active]:text-white transition-colors rounded-md px-4 py-2"
+                                className="text-base md:text-lg font-bold text-accent hover:bg-accent hover:text-white data-[state=active]:bg-accent data-[state=active]:text-white transition-colors rounded-md px-4 py-2"
                             >
                                 SOĞUK ODALAR
                             </TabsTrigger>
@@ -168,7 +184,7 @@ export function ProductsSection() {
                         <div className="relative">
                             <motion.div
                                 key={currentProductIndex}
-                                className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-7xl"
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-7xl"
                                 variants={container}
                                 initial="hidden"
                                 animate="show"
@@ -178,26 +194,24 @@ export function ProductsSection() {
                                         <Card className="text-center hover:shadow-lg transition-shadow flex flex-col h-full">
                                             <CardHeader className="flex-1 flex flex-col justify-center items-center">
                                                 <div className="mx-auto mb-4 p-4 bg-accent rounded-full w-fit">
-                                                    <product.icon className="h-12 w-12 text-white" />
+                                                    <product.icon className="h-10 w-10 md:h-12 md:w-12 text-white" />
                                                 </div>
-                                                <CardTitle className="text-xl">{product.title}</CardTitle>
+                                                <CardTitle className="text-lg md:text-xl">{product.title}</CardTitle>
                                             </CardHeader>
                                             <CardContent>
-                                                <CardDescription className="text-base">{product.description}</CardDescription>
+                                                <CardDescription className="text-sm md:text-base">{product.description}</CardDescription>
                                             </CardContent>
                                         </Card>
                                     </motion.div>
                                 ))}
                             </motion.div>
 
-
-
                             <motion.div className="flex justify-center gap-4 mt-9" variants={fadeUp} initial={false}>
                                 <Button
                                     variant="outline"
                                     size="icon"
                                     onClick={handleProductPrev}
-                                    className="rounded-full bg-white hover:bg-accent transition-colors"
+                                    className="rounded-full bg-white hover:bg-accent transition-colors h-10 w-10 md:h-12 md:w-12"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </Button>
@@ -217,7 +231,7 @@ export function ProductsSection() {
                                     variant="outline"
                                     size="icon"
                                     onClick={handleProductNext}
-                                    className="rounded-full bg-white hover:bg-accent transition-colors"
+                                    className="rounded-full bg-white hover:bg-accent transition-colors h-10 w-10 md:h-12 md:w-12"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </Button>
@@ -229,7 +243,7 @@ export function ProductsSection() {
                         <div className="relative">
                             <motion.div
                                 key={currentColdRoomIndex}
-                                className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-7xl"
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-7xl"
                                 variants={container}
                                 initial="hidden"
                                 animate="show"
@@ -239,26 +253,24 @@ export function ProductsSection() {
                                         <Card className="text-center hover:shadow-lg transition-shadow flex flex-col h-full">
                                             <CardHeader className="flex-1 flex flex-col justify-center items-center">
                                                 <div className="mx-auto mb-4 p-4 bg-accent rounded-full w-fit">
-                                                    <room.icon className="h-12 w-12 text-white" />
+                                                    <room.icon className="h-10 w-10 md:h-12 md:w-12 text-white" />
                                                 </div>
-                                                <CardTitle className="text-xl">{room.title}</CardTitle>
+                                                <CardTitle className="text-lg md:text-xl">{room.title}</CardTitle>
                                             </CardHeader>
                                             <CardContent>
-                                                <CardDescription className="text-base">{room.description}</CardDescription>
+                                                <CardDescription className="text-sm md:text-base">{room.description}</CardDescription>
                                             </CardContent>
                                         </Card>
                                     </motion.div>
                                 ))}
                             </motion.div>
 
-
-
                             <motion.div className="flex justify-center gap-4 mt-9" variants={fadeUp} initial={false}>
                                 <Button
                                     variant="outline"
                                     size="icon"
                                     onClick={handleColdRoomPrev}
-                                    className="rounded-full bg-white hover:bg-accent transition-colors"
+                                    className="rounded-full bg-white hover:bg-accent transition-colors h-10 w-10 md:h-12 md:w-12"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </Button>
@@ -279,7 +291,7 @@ export function ProductsSection() {
                                     variant="outline"
                                     size="icon"
                                     onClick={handleColdRoomNext}
-                                    className="rounded-full bg-white hover:bg-accent transition-colors"
+                                    className="rounded-full bg-white hover:bg-accent transition-colors h-10 w-10 md:h-12 md:w-12"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </Button>

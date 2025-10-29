@@ -8,22 +8,19 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Frigocan Soğutma - Panel & Soğutma Sistemleri",
-  description: "Soğuk hava depoları ve soğutma sistemleri konusunda uzman çözümler",
-  generator: "v0.app",
+    title: "Frigocan Soğutma - Panel & Soğutma Sistemleri",
+    description: "Soğuk hava depoları ve soğutma sistemleri konusunda uzman çözümler",
+    generator: "v0.app",
 }
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="tr">
-      <body className={`font-sans antialiased`}>
-        {children}
-
-      </body>
-    </html>
-  )
+    return (
+        <html lang="tr">
+        <body className={`font-sans antialiased`}>{children}</body>
+        </html>
+    )
 }

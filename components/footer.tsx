@@ -46,9 +46,31 @@ export function Footer() {
     }, [inView, controls, reduce])
 
     return (
-        <footer className="bg-accent text-white pt-16 pb-8" ref={ref}>
+        <footer className=" snap-start snap-always md:pt-16  relative overflow-hidden pt-16 pb-8" ref={ref}>
             <motion.div
-                className="container mx-auto px-4"
+                className="absolute inset-0 pointer-events-none"
+                variants={
+                    reduce
+                        ? {}
+                        : {
+                            hidden: { opacity: 0 },
+                            show: { opacity: 1, transition: { duration: 0.6 } },
+                        }
+                }
+                initial="hidden"
+                animate={controls}
+            >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
+                    <div className="absolute top-0 left-0 w-full h-full">
+                        <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-white/10 to-transparent transform skew-x-12 origin-top-right"></div>
+                    </div>
+                </div>
+            </motion.div>
+
+            <div className="absolute top-0 left-0 w-1/3 h-full bg-accent transform -skew-x-12 origin-top-left -translate-x-32"></div>
+
+            <motion.div
+                className="container mx-auto px-4 relative z-10 text-white"
                 variants={maybe(reduce) ?? container}
                 initial="hidden"
                 animate={controls}
@@ -56,7 +78,7 @@ export function Footer() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                     <motion.div variants={maybe(reduce) ?? fadeUp}>
                         <div className="mb-6">
-                            <img src={"/logo.jpg"} className="object-cover w-50 h-24 rounded-lg"  alt={"Logo"}/>
+                            <img src={"/logo.jpg"} className="object-cover w-50 h-24 rounded-lg" alt={"Logo"} />
                         </div>
                         <div className="space-y-3 text-sm">
                             <p>
@@ -278,6 +300,10 @@ export function Footer() {
                     </div>
                 </motion.div>
             </motion.div>
+
+            <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-10">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+            </div>
 
             <Link
                 href="https://wa.me/900000000000"

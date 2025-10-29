@@ -60,27 +60,25 @@ export function Header() {
     ]
     const [hoveredMenu, setHoveredMenu] = useState<string | null>(null)
 
-
     return (
-        <header className="sticky top-0 z-50 w-full  bg-white shadow-sm">
+        <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
             <div className="container mx-auto px-4">
-                <div className="flex h-24 items-center justify-between">
-                    {/* Logo */}
+                <div className="flex h-16 md:h-20 lg:h-24 items-center justify-between">
                     <Link href="/" className="flex items-center space-x-2">
-                        <div className="relative h-20 w-64">
+                        <div className="relative h-12 w-32 sm:h-16 sm:w-48 md:h-20 md:w-64">
                             <Image src="/logo2.png" alt="Frigocan Soğutma" fill className="object-contain" priority />
                         </div>
                     </Link>
 
-                    {/* Desktop Menu */}
-                    <nav className="hidden md:flex items-center gap-6 relative">
+                    <nav className="hidden lg:flex items-center gap-4 xl:gap-6 relative">
                         <Button asChild variant="ghost" size="sm">
-                            <Link href="/kurumsal">KURUMSAL</Link>
+                            <Link href="/kurumsal" className="text-sm font-medium hover:text-primary transition-colors">
+                                KURUMSAL
+                            </Link>
                         </Button>
 
                         {menus.map((menu) => (
                             <div key={menu.key} className="relative">
-                                {/* --- Menü butonu --- */}
                                 <Button
                                     variant="ghost"
                                     size="sm"
@@ -95,19 +93,15 @@ export function Header() {
                                         className={`transition-all duration-200 ${
                                             openDropdown === menu.key
                                                 ? hoveredMenu === menu.key
-                                                    ? "rotate-180 text-white" // açık + hover → beyaz + döner
-                                                    : "rotate-180 text-black" // açık ama hover yok → siyah + döner
+                                                    ? "rotate-180 text-white"
+                                                    : "rotate-180 text-black"
                                                 : hoveredMenu === menu.key
-                                                    ? "text-white" // sadece hover → beyaz
-                                                    : "text-gray-800" // normal → siyah
+                                                    ? "text-white"
+                                                    : "text-gray-800"
                                         }`}
                                     />
                                 </Button>
 
-
-
-
-                                {/* --- Dropdown --- */}
                                 <AnimatePresence>
                                     {openDropdown === menu.key && (
                                         <motion.div
@@ -140,13 +134,11 @@ export function Header() {
                         </Button>
                     </nav>
 
-                    {/* Mobile Menu Button */}
-                    <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                        {mobileMenuOpen ? <X /> : <Menu />}
+                    <button className="lg:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+                        {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                     </button>
                 </div>
 
-                {/* Mobile Menu */}
                 <AnimatePresence>
                     {mobileMenuOpen && (
                         <motion.div
@@ -154,7 +146,7 @@ export function Header() {
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="md:hidden py-4 space-y-2 overflow-hidden"
+                            className="lg:hidden py-4 space-y-2 overflow-hidden"
                         >
                             <Link href="/kurumsal" className="block py-2 text-sm font-medium">
                                 KURUMSAL
@@ -183,11 +175,7 @@ export function Header() {
                                                 className="pl-4 space-y-1 overflow-hidden"
                                             >
                                                 {menu.items.map((item) => (
-                                                    <Link
-                                                        key={item.href}
-                                                        href={item.href}
-                                                        className="block py-1 "
-                                                    >
+                                                    <Link key={item.href} href={item.href} className="block py-1 text-sm">
                                                         {item.label}
                                                     </Link>
                                                 ))}
@@ -199,6 +187,9 @@ export function Header() {
 
                             <Link href="/iletisim" className="block py-2 text-sm font-medium">
                                 İLETİŞİM
+                            </Link>
+                            <Link href="/bayilik" className="block py-2 text-sm font-medium">
+                                BAYİLİK
                             </Link>
                         </motion.div>
                     )}

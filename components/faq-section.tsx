@@ -39,10 +39,13 @@ export function FaqSection() {
     }, [inView, controls, reduce])
 
     return (
-        <section ref={ref} className="py-20 h-[900px] pb-6">
-            <div className="container mx-auto px-4 max-w-5xl">
+        <section
+            ref={ref}
+            className="snap-start snap-always min-h-screen py-12 md:py-16 lg:py-20 pb-6 flex items-center"
+        >
+            <div className="container mx-auto px-4 max-w-5xl w-full">
                 <motion.h2
-                    className="text-5xl font-bold text-accent mb-12"
+                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent mb-8 md:mb-12"
                     initial="hidden"
                     animate={controls}
                     variants={maybe(reduce) ?? fadeUp}

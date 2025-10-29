@@ -8,18 +8,18 @@ import { FaqSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <HeroSection />
-        <WhyTamgucSection />
-        <ProductsSection />
-        <ProjectsSection />
-        <BlogSection />
-        <FaqSection />
-      </main>
-      <Footer />
-    </div>
-  )
+    return (
+        <div className="min-h-screen">
+            <Header />
+            <main className="snap-y snap-mandatory h-screen overflow-y-auto">
+                <HeroSection />
+                <WhyTamgucSection />
+                <ProductsSection />
+                <ProjectsSection />
+                <BlogSection />
+                <FaqSection />
+                <Footer />
+            </main>
+        </div>
+    )
 }
