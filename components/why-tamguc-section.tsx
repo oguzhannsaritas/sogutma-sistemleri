@@ -161,12 +161,18 @@ export function WhyTamgucSection() {
                             </motion.div>
                         </div>
 
+                        {/* GÜNCELLENEN BUTON */}
                         <motion.div variants={maybe(fadeUp)}>
                             <Button
+                                asChild
                                 size="lg"
                                 className="cursor-pointer text-accent bg-white w-full sm:w-auto text-xs sm:text-sm md:text-base hover:text-white hover:bg-accent hover:border hover:border-gray-300"
                             >
-                                Daha fazla bilgi için tıklayınız
+                                <a
+                                    href={`mailto:satis@frigocan.com?subject=Soğuk%20Hava%20Deposu%20Bilgi%20Talebi&body=Merhaba%20Frigocan%2C%0A%0A2%20HP%20so%C4%9Fuk%20hava%20deposu%20ihtiyac%C4%B1m%20i%C3%A7in%20bilgi%20ve%20fiyat%20talep%20ediyorum.%0AL%C3%BCtfen%20benimle%20iletisime%20ge%C3%A7in.%0A%0ATe%C5%9Fekk%C3%BCrler.`}
+                                >
+                                    Daha fazla bilgi için tıklayınız
+                                </a>
                             </Button>
                         </motion.div>
                     </motion.div>

@@ -20,25 +20,9 @@ export function Header() {
             title: "ÜRÜNLER",
             key: "urunler",
             items: [
-                { href: "/urunler/panel", label: "Panel Sistemleri" },
-                { href: "/urunler/kapilar", label: "Soğuk Oda Kapıları" },
-                { href: "/urunler/motorlar", label: "Soğutma Grupları" },
-            ],
-        },
-        {
-            title: "SOĞUK ODALAR",
-            key: "soguk-odalar",
-            items: [
-                { href: "/soguk-odalar/endustriyel", label: "Endüstriyel Odalar" },
-                { href: "/soguk-odalar/moduler", label: "Modüler Odalar" },
-            ],
-        },
-        {
-            title: "SOĞUK DEPO",
-            key: "soguk-depo",
-            items: [
-                { href: "/soguk-depo/projeler", label: "Depo Projeleri" },
-                { href: "/soguk-depo/kurulum", label: "Kurulum Hizmetleri" },
+                { href: "/panel_sistemleri", label: "Panel Sistemleri" },
+                { href: "/sogukoda_kapilari", label: "Soğuk Oda Kapıları" },
+                { href: "/sogutma_gruplari", label: "Soğutma Grupları" },
             ],
         },
         {
@@ -53,51 +37,91 @@ export function Header() {
             title: "PROJELER",
             key: "projeler",
             items: [
-                { href: "/projeler/devam-eden", label: "Devam Eden" },
-                { href: "/projeler/tamamlanan", label: "Tamamlanan" },
+                { href: "/projeler", label: "Projeler" },
+                { href: "/kurulum_hizmetleri", label: "Kurulum Hizmetleri" },
             ],
         },
     ]
-    const [hoveredMenu, setHoveredMenu] = useState<string | null>(null)
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
             <div className="container mx-auto px-4">
+                {/* TOP BAR */}
                 <div className="flex h-16 md:h-20 lg:h-24 items-center justify-between">
+                    {/* LOGO */}
                     <Link href="/" className="flex items-center space-x-2">
                         <div className="relative h-12 w-32 sm:h-16 sm:w-48 md:h-20 md:w-64">
-                            <Image src="/logo2.png" alt="Frigocan Soğutma" fill className="object-contain" priority />
+                            <Image
+                                src="/logo2.png"
+                                alt="Frigocan Soğutma"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </div>
                     </Link>
 
+                    {/* DESKTOP NAV */}
                     <nav className="hidden lg:flex items-center gap-4 xl:gap-6 relative">
-                        <Button asChild variant="ghost" size="sm">
-                            <Link href="/kurumsal" className="text-sm font-medium hover:text-primary transition-colors">
+                        {/* ANA SAYFA */}
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="sm"
+                            className="group px-3 py-2 rounded-md bg-transparent text-black hover:bg-accent hover:text-white transition-colors"
+                        >
+                            <Link
+                                href="/"
+                                className="text-sm font-medium leading-none"
+                            >
+                                ANA SAYFA
+                            </Link>
+                        </Button>
+
+                        {/* KURUMSAL */}
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="sm"
+                            className="group px-3 py-2 rounded-md bg-transparent text-black hover:bg-accent hover:text-white transition-colors"
+                        >
+                            <Link
+                                href="/kurumsal"
+                                className="text-sm font-medium leading-none"
+                            >
                                 KURUMSAL
                             </Link>
                         </Button>
 
+                        {/* SOĞUK ODALAR */}
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="sm"
+                            className="group px-3 py-2 rounded-md bg-transparent text-black hover:bg-accent hover:text-white transition-colors"
+                        >
+                            <Link
+                                href="/sogukodalar"
+                                className="text-sm font-medium leading-none"
+                            >
+                                SOĞUK ODALAR
+                            </Link>
+                        </Button>
+
+                        {/* DROPDOWN MENÜLER */}
                         {menus.map((menu) => (
                             <div key={menu.key} className="relative">
                                 <Button
                                     variant="ghost"
                                     size="sm"
                                     onClick={() => toggleDropdown(menu.key)}
-                                    onMouseEnter={() => setHoveredMenu(menu.key)}
-                                    onMouseLeave={() => setHoveredMenu(null)}
-                                    className="flex items-center gap-1 transition-colors text-black"
+                                    className="group flex items-center gap-1 px-3 py-2 rounded-md bg-transparent text-black hover:bg-accent hover:text-white transition-colors"
                                 >
-                                    {menu.title}
+                                    <span className="text-sm font-medium leading-none">{menu.title}</span>
                                     <ChevronDown
                                         size={16}
-                                        className={`transition-all duration-200 ${
-                                            openDropdown === menu.key
-                                                ? hoveredMenu === menu.key
-                                                    ? "rotate-180 text-white"
-                                                    : "rotate-180 text-black"
-                                                : hoveredMenu === menu.key
-                                                    ? "text-white"
-                                                    : "text-gray-800"
+                                        className={`transition-all duration-200 text-black group-hover:text-white ${
+                                            openDropdown === menu.key ? "rotate-180" : ""
                                         }`}
                                     />
                                 </Button>
@@ -126,19 +150,33 @@ export function Header() {
                             </div>
                         ))}
 
-                        <Button asChild variant="ghost" size="sm">
-                            <Link href="/iletisim">İLETİŞİM</Link>
-                        </Button>
-                        <Button asChild variant="ghost" size="sm">
-                            <Link href="/bayilik">BAYİLİK</Link>
+                        {/* İLETİŞİM */}
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="sm"
+                            className="group px-3 py-2 rounded-md bg-transparent text-black hover:bg-accent hover:text-white transition-colors"
+                        >
+                            <Link
+                                href="/iletisim"
+                                className="text-sm font-medium leading-none"
+                            >
+                                İLETİŞİM
+                            </Link>
                         </Button>
                     </nav>
 
-                    <button className="lg:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+                    {/* MOBILE MENU TOGGLE */}
+                    <button
+                        className="lg:hidden p-2"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
                         {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                     </button>
                 </div>
 
+                {/* MOBILE NAV DROPDOWN */}
                 <AnimatePresence>
                     {mobileMenuOpen && (
                         <motion.div
@@ -148,20 +186,42 @@ export function Header() {
                             transition={{ duration: 0.3 }}
                             className="lg:hidden py-4 space-y-2 overflow-hidden"
                         >
-                            <Link href="/kurumsal" className="block py-2 text-sm font-medium">
+                            <Link
+                                href="/"
+                                className="block py-2 text-sm font-medium text-black"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                ANA SAYFA
+                            </Link>
+
+                            <Link
+                                href="/kurumsal"
+                                className="block py-2 text-sm font-medium text-black"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
                                 KURUMSAL
+                            </Link>
+
+                            <Link
+                                href="/sogukodalar"
+                                className="block py-2 text-sm font-medium text-black"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                SOĞUK ODALAR
                             </Link>
 
                             {menus.map((menu) => (
                                 <div key={menu.key}>
                                     <button
                                         onClick={() => toggleDropdown(menu.key)}
-                                        className="flex w-full justify-between items-center py-2 text-sm font-medium"
+                                        className="flex w-full justify-between items-center py-2 text-sm font-medium text-black"
                                     >
                                         {menu.title}
                                         <ChevronDown
                                             size={16}
-                                            className={`transition-transform ${openDropdown === menu.key ? "rotate-180" : ""}`}
+                                            className={`transition-transform text-black ${
+                                                openDropdown === menu.key ? "rotate-180" : ""
+                                            }`}
                                         />
                                     </button>
 
@@ -175,7 +235,12 @@ export function Header() {
                                                 className="pl-4 space-y-1 overflow-hidden"
                                             >
                                                 {menu.items.map((item) => (
-                                                    <Link key={item.href} href={item.href} className="block py-1 text-sm">
+                                                    <Link
+                                                        key={item.href}
+                                                        href={item.href}
+                                                        className="block py-1 text-sm text-black"
+                                                        onClick={() => setMobileMenuOpen(false)}
+                                                    >
                                                         {item.label}
                                                     </Link>
                                                 ))}
@@ -185,11 +250,12 @@ export function Header() {
                                 </div>
                             ))}
 
-                            <Link href="/iletisim" className="block py-2 text-sm font-medium">
+                            <Link
+                                href="/iletisim"
+                                className="block py-2 text-sm font-medium text-black"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
                                 İLETİŞİM
-                            </Link>
-                            <Link href="/bayilik" className="block py-2 text-sm font-medium">
-                                BAYİLİK
                             </Link>
                         </motion.div>
                     )}
