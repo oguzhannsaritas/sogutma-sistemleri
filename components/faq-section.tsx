@@ -59,7 +59,7 @@ export function FaqSection() {
                     <Accordion type="single" collapsible defaultValue="item-1" className="space-y-4 pb-4">
                         <motion.div
                             variants={maybe(reduce) ?? fadeUp}
-                            className="border border-gray-200 rounded-lg bg-white overflow-hidden"
+                            className="border border-gray-200  rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-1" className="px-6 border-none">
                                 {/* SORU BAŞLIĞI BOYUTLARI GÜNCEL */}
