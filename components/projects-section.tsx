@@ -184,7 +184,7 @@ export function ProjectsSection() {
             </motion.div>
 
             <motion.div className="container mx-auto px-4 relative z-10 w-full" variants={maybe(container)} initial={false}>
-                <div className="flex justify-between items-center mb-8">
+                <div className="flex justify-between items-center mb-8 -mt-24">
                     <motion.h2 className="text-5xl font-bold text-white "  variants={maybe(fadeUp)} initial={false}>
                         Projeler
                     </motion.h2>

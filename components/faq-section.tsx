@@ -4,7 +4,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { motion, useAnimation, useReducedMotion, useInView } from "framer-motion"
 import { useEffect, useRef } from "react"
 
-const EASE = [0.22, 1, 0.36, 1]
+// TS hatasız easing tuple
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 const maybe = (reduce: boolean) => (reduce ? {} : undefined)
 
 const container = {
@@ -44,8 +45,9 @@ export function FaqSection() {
             className="snap-start snap-always min-h-screen py-12 md:py-16 lg:py-20 pb-6 flex items-center"
         >
             <div className="container mx-auto px-4 max-w-5xl w-full">
+                {/* BAŞLIK BOYUTLARI GÜNCEL */}
                 <motion.h2
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent mb-8 md:mb-12"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent mb-8 -mt-24 md:mb-12"
                     initial="hidden"
                     animate={controls}
                     variants={maybe(reduce) ?? fadeUp}
@@ -60,7 +62,8 @@ export function FaqSection() {
                             className="border border-gray-200 rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-1" className="px-6 border-none">
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                                {/* SORU BAŞLIĞI BOYUTLARI GÜNCEL */}
+                                <AccordionTrigger className="text-base md:text-lg font-bold hover:no-underline text-left">
                                     Soğuk Hava Deposu Yatırımı Yapmak İsteyenler Nelere Öncelik Vermelidir?
                                 </AccordionTrigger>
                                 <AccordionContent className="text-base leading-relaxed space-y-5">
@@ -81,7 +84,7 @@ export function FaqSection() {
                             className="border border-gray-200 rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-2" className="px-6 border-none">
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                                <AccordionTrigger className="text-base md:text-lg font-bold hover:no-underline text-left">
                                     Soğuk Hava Deposu Tamiri Zor mudur?
                                 </AccordionTrigger>
                                 <AccordionContent className="text-base leading-relaxed">
@@ -99,7 +102,7 @@ export function FaqSection() {
                             className="border border-gray-200 rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-3" className="px-6 border-none">
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                                <AccordionTrigger className="text-base md:text-lg font-bold hover:no-underline text-left">
                                     Tohumların Korunması İçin Soğuk Oda İmalatı
                                 </AccordionTrigger>
                                 <AccordionContent className="text-base leading-relaxed">
@@ -117,7 +120,7 @@ export function FaqSection() {
                             className="border border-gray-200 rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-4" className="px-6 border-none">
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                                <AccordionTrigger className="text-base md:text-lg font-bold hover:no-underline text-left">
                                     Split Soğutma Sistemi
                                 </AccordionTrigger>
                                 <AccordionContent className="text-base leading-relaxed">
@@ -134,7 +137,7 @@ export function FaqSection() {
                             className="border border-gray-200 rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-5" className="px-6 border-none">
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                                <AccordionTrigger className="text-base md:text-lg font-bold hover:no-underline text-left">
                                     Soğuk Hava Depoları Sağlık Sektöründe Kullanılır mı?
                                 </AccordionTrigger>
                                 <AccordionContent className="text-base leading-relaxed">
@@ -151,7 +154,7 @@ export function FaqSection() {
                             className="border border-gray-200 rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-6" className="px-6 border-none">
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                                <AccordionTrigger className="text-base md:text-lg font-bold hover:no-underline text-left">
                                     Tamcold Soğutma Sistemleri Sizlere Neler Sunar?
                                 </AccordionTrigger>
                                 <AccordionContent className="text-base leading-relaxed">
@@ -169,7 +172,7 @@ export function FaqSection() {
                             className="border border-gray-200 rounded-lg bg-white overflow-hidden mb-4"
                         >
                             <AccordionItem value="item-7" className="px-6 border-none">
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                                <AccordionTrigger className="text-base md:text-lg font-bold hover:no-underline text-left">
                                     Gıda Sektörü için Soğuk Hava Deposunun Önemleri
                                 </AccordionTrigger>
                                 <AccordionContent className="text-base leading-relaxed">

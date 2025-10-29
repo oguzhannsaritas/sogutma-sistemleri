@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div className="min-h-screen">
             <Header />
-            <main className="snap-y snap-mandatory h-screen overflow-y-auto">
+            <main className="snap-y snap-proximity h-screen overflow-y-auto">
                 <HeroSection />
                 <WhyTamgucSection />
                 <ProductsSection />
