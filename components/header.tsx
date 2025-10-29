@@ -168,7 +168,7 @@ export function Header() {
 
                     {/* MOBILE MENU TOGGLE */}
                     <button
-                        className="lg:hidden p-2"
+                        className="lg:hidden p-2 text-black"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         aria-label="Toggle menu"
                     >
