@@ -180,7 +180,7 @@ export function BlogSection() {
             {/* İçerik */}
             <div className="container mx-auto px-4 relative z-10 w-full">
                 <motion.h2
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 md:mb-12"
+                    className="text-2xl sm:text-3xl -mt-14 md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12"
                     variants={maybe(reduce) ?? fadeUp}
                     initial={false}
                 >
@@ -221,7 +221,8 @@ export function BlogSection() {
                                     variants={maybe(reduce) ?? fadeUp}
                                     initial={false}
                                 >
-                                    <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full bg-white">
+                                    {/* mobilde kart genişliğini kısıtla + ortala */}
+                                    <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full bg-white w-[260px] sm:w-auto mx-auto">
                                         <CardHeader className="p-0">
                                             <div className="aspect-video relative">
                                                 <img
@@ -232,14 +233,14 @@ export function BlogSection() {
                                             </div>
                                         </CardHeader>
                                         <CardContent className="p-4 md:p-6">
-                                            <h3 className="text-lg md:text-xl font-bold mb-4 text-accent">
+                                            <h3 className="text-base sm:text-lg md:text-xl font-bold mb-4 text-accent leading-snug">
                                                 {post.title}
                                             </h3>
                                         </CardContent>
                                         <CardFooter className="p-4 md:p-6 pt-0">
                                             <Button
                                                 variant="ghost"
-                                                className="group text-sm md:text-base text-accent hover:text-accent"
+                                                className="group text-xs sm:text-sm md:text-base text-accent hover:text-accent"
                                             >
                                                 Blog detayı
                                                 <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

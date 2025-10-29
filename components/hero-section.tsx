@@ -95,25 +95,28 @@ export function HeroSection() {
     return (
         <section
             ref={sectionRef}
-            className="snap-start snap-always min-h-screen  md:min-h-[600px] md:md:min-h-[750px] lg:h-[900px] relative overflow-hidden flex items-center py-12 md:py-16 lg:py-0"
+            className="snap-start snap-always min-h-screen md:min-h-[600px] lg:min-h-[750px] lg:h-[900px] relative overflow-hidden flex items-center py-12 md:py-16 lg:py-0"
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
             aria-roledescription="carousel"
         >
+            {/* arka plan ana degrade */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
                 <div className="absolute top-0 left-0 w-full h-full">
                     <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-white/10 to-transparent transform skew-x-12 origin-top-right"></div>
                 </div>
             </div>
 
+            {/* accent blok */}
             <div className="absolute top-0 left-0 w-1/3 h-full bg-accent transform -skew-x-12 origin-top-left -translate-x-32"></div>
 
             <div className="container mx-auto px-4 h-full relative z-10">
                 <div className="grid md:grid-cols-2 gap-8 h-full items-center">
+                    {/* SOL TARAF: METİN */}
                     <div className="text-white space-y-4 md:space-y-6">
                         <h1
                             key={`h1-${index}-${enterTick}`}
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-heroText text-white"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-heroText text-white"
                         >
                             {slide.title1}
                             {slide.title2 ? (
@@ -123,14 +126,16 @@ export function HeroSection() {
                                 </>
                             ) : null}
                         </h1>
+
                         <p
                             key={`sub-${index}-${enterTick}`}
-                            className="max-w-xl text-base md:text-lg text-white/95 animate-heroSub leading-relaxed"
+                            className="max-w-xl text-sm sm:text-base md:text-lg text-white/95 animate-heroSub leading-relaxed"
                         >
                             Frigocan çözümleriyle soğuk zinciri güvenle yönetin.
                         </p>
                     </div>
 
+                    {/* SAĞ TARAF: GÖRSEL + BUTONLAR */}
                     <div className="flex flex-col items-center">
                         <div
                             className={`relative h-[350px] sm:h-[450px] md:h-[500px] lg:h-[600px] w-full img-stage ${variant} overflow-hidden rounded-lg`}
@@ -184,6 +189,7 @@ export function HeroSection() {
                 </div>
             </div>
 
+            {/* alttaki radial parlama */}
             <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
             </div>

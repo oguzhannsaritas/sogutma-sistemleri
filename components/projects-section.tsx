@@ -50,7 +50,8 @@ const projects = [
     { id: 9, image: "/cold-room-interior-glass-doors.jpg", title: "OTEL SOĞUK ODA SİSTEMİ", location: "MUĞLA, TÜRKİYE" },
 ]
 
-const EASE = [0.22, 1, 0.36, 1] as const
+// TS uyumlu easing değeri (Framer Motion ile)
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 const container = {
     hidden: {},
@@ -86,6 +87,7 @@ export function ProjectsSection() {
 
     const totalPages = Math.ceil(projects.length / itemsPerPage)
 
+    // itemsPerPage değişince currentIndex out-of-bounds olmasın
     useEffect(() => {
         setCurrentIndex((prev) => {
             if (prev >= totalPages) {
@@ -162,10 +164,11 @@ export function ProjectsSection() {
         <motion.section
             ref={ref}
             id="projeler"
-            className="snap-start snap-always min-h-screen  py-12 md:py-16 lg:py-20 relative overflow-hidden flex items-center"
+            className="snap-start snap-always min-h-screen py-12 md:py-16 lg:py-20 relative overflow-hidden flex items-center"
             initial="hidden"
             animate={controls}
         >
+            {/* Arka plan */}
             <motion.div
                 className="absolute inset-0 pointer-events-none"
                 variants={maybe({
@@ -183,14 +186,29 @@ export function ProjectsSection() {
                 <div className="absolute top-0 left-0 w-1/3 h-full bg-accent transform -skew-x-12 origin-top-left -translate-x-32"></div>
             </motion.div>
 
-            <motion.div className="container mx-auto px-4 relative z-10 w-full" variants={maybe(container)} initial={false}>
+            {/* İçerik */}
+            <motion.div
+                className="container mx-auto px-4 relative z-10 w-full"
+                variants={maybe(container)}
+                initial={false}
+            >
+                {/* Başlık */}
                 <div className="flex justify-between items-center mb-8 -mt-14">
-                    <motion.h2 className="text-5xl font-bold text-white "  variants={maybe(fadeUp)} initial={false}>
+                    <motion.h2
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  font-bold text-white"
+                        variants={maybe(fadeUp)}
+                        initial={false}
+                    >
                         Projeler
                     </motion.h2>
                 </div>
 
-                <motion.div className="max-w-7xl mx-auto overflow-hidden" variants={maybe(container)} initial={false}>
+                {/* Slider alanı */}
+                <motion.div
+                    className="max-w-7xl mx-auto overflow-hidden"
+                    variants={maybe(container)}
+                    initial={false}
+                >
                     <motion.div
                         key={currentIndex}
                         initial={{
@@ -215,7 +233,8 @@ export function ProjectsSection() {
                         >
                             {visibleProjects.map((project) => (
                                 <motion.div key={project.id} variants={maybe(fadeUp)} initial={false}>
-                                    <Card className="overflow-hidden hover:shadow-xl transition-all duration-600">
+                                    {/* BURASI: mobilde kartı küçültüyoruz */}
+                                    <Card className="overflow-hidden hover:shadow-xl transition-all duration-600 w-[260px] sm:w-auto mx-auto">
                                         <div className="aspect-[16/10] relative select-none">
                                             <img
                                                 src={project.image || "/placeholder.svg"}
@@ -224,8 +243,8 @@ export function ProjectsSection() {
                                                 draggable={false}
                                             />
                                         </div>
-                                        <CardContent className="p-4">
-                                            <h3 className="text-lg font-bold text-gray-500 text-center">
+                                        <CardContent className="p-1">
+                                            <h3 className="text-center font-bold text-gray-500 text-sm sm:text-base md:text-lg leading-snug">
                                                 {project.title}
                                                 <br />
                                                 {project.location}
@@ -238,15 +257,21 @@ export function ProjectsSection() {
                     </motion.div>
                 </motion.div>
 
+                {/* Alt CTA metni */}
                 <motion.div
-                    className="text-white font-medium items-center justify-center flex mt-8"
+                    className="text-white font-medium items-center justify-center flex mt-8 text-[11px] sm:text-sm md:text-base"
                     variants={maybe(fadeUp)}
                     initial={false}
                 >
                     Tüm projeleri incele
                 </motion.div>
 
-                <motion.div className="flex justify-center gap-4 mt-4" variants={maybe(fadeUp)} initial={false}>
+                {/* Pager butonları */}
+                <motion.div
+                    className="flex justify-center gap-4 mt-4"
+                    variants={maybe(fadeUp)}
+                    initial={false}
+                >
                     <Button
                         size="icon"
                         variant="outline"
@@ -256,7 +281,11 @@ export function ProjectsSection() {
                         <ChevronLeft className="h-5 w-5" />
                     </Button>
 
-                    <motion.div className="flex justify-center gap-2 items-center" variants={maybe(fadeUp)} initial={false}>
+                    <motion.div
+                        className="flex justify-center gap-2 items-center"
+                        variants={maybe(fadeUp)}
+                        initial={false}
+                    >
                         {Array.from({ length: totalPages }).map((_, index) => (
                             <button
                                 key={index}
@@ -280,6 +309,7 @@ export function ProjectsSection() {
                 </motion.div>
             </motion.div>
 
+            {/* Radial glow */}
             <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
             </div>
