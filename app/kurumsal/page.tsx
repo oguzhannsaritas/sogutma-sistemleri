@@ -25,11 +25,11 @@ export default function KurumsalPage() {
                     <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                         {/* SOL: metin */}
                         <div className="max-w-2xl">
-                            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
+                            <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-white mb-6 md:mb-8 leading-tight">
                                 Frigocan Soğutma
                             </h1>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-balance text-white/95 leading-relaxed">
                                 <p>
                                     Endüstriyel soğutma alanında faaliyet göstermekte olup, anahtar teslim soğuk hava deposu, montaj,
                                     montaj sonrası teknik servislik konularında uzman mühendis ve deneyimli kadrosuyla hizmet vermektedir.
@@ -81,8 +81,8 @@ export default function KurumsalPage() {
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         <div className="bg-card p-6 md:p-8 rounded-lg shadow-sm border border-border">
-                            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                                <svg className="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-4 md:mb-6">
+                                <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -91,15 +91,15 @@ export default function KurumsalPage() {
                                     />
                                 </svg>
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">Kalite Güvencesi</h3>
+                            <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3">Kalite Güvencesi</h3>
                             <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                                 En son teknoloji makineler ve uluslararası kalite standartları ile güvenilir çözümler sunuyoruz.
                             </p>
                         </div>
 
                         <div className="bg-card p-6 md:p-8 rounded-lg shadow-sm border border-border">
-                            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                                <svg className="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-4 md:mb-6">
+                                <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -108,15 +108,15 @@ export default function KurumsalPage() {
                                     />
                                 </svg>
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">Uzman Kadro</h3>
+                            <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3">Uzman Kadro</h3>
                             <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                                 Deneyimli mühendis ve teknik ekibimiz ile 7/24 hizmet ve destek sağlıyoruz.
                             </p>
                         </div>
 
                         <div className="bg-card p-6 md:p-8 rounded-lg shadow-sm border border-border">
-                            <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                                <svg className="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-4 md:mb-6">
+                                <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -125,7 +125,7 @@ export default function KurumsalPage() {
                                     />
                                 </svg>
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">Geniş Portföy</h3>
+                            <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3">Geniş Portföy</h3>
                             <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                                 Yurt içi ve yurt dışında yüzlerce başarılı proje ile sektörde lider konumdayız.
                             </p>

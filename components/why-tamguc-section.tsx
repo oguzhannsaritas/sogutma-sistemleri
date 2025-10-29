@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { CheckCircle2, Thermometer, ChevronLeft, ChevronRight } from "lucide-react"
@@ -43,48 +43,69 @@ export function WhyTamgucSection() {
 
     const [currentLogoIndex, setCurrentLogoIndex] = useState(0)
     const [logosPerPage, setLogosPerPage] = useState(4)
+    const totalLogoPages = Math.ceil(companyLogos.length / logosPerPage)
 
+    // AUTOPLAY: resetlenebilir timeout döngüsü
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+    const clearTimer = () => {
+        if (timerRef.current) {
+            clearTimeout(timerRef.current)
+            timerRef.current = null
+        }
+    }
+
+    const scheduleNext = useCallback(() => {
+        clearTimer()
+        timerRef.current = setTimeout(() => {
+            setCurrentLogoIndex(prev => (prev + 1) % totalLogoPages)
+            // bir sonrakini tekrar planla (sonsuz döngü)
+            scheduleNext()
+        }, 5000)
+    }, [totalLogoPages])
+
+    // görünürlük/tercihlere göre autoplay’i yönet
+    useEffect(() => {
+        if (reduce) {
+            controls.set("show")
+            clearTimer()
+            return
+        }
+        controls.start(inView ? "show" : "hidden")
+        if (inView) {
+            scheduleNext()
+        } else {
+            clearTimer()
+        }
+        return () => clearTimer()
+    }, [inView, controls, reduce, scheduleNext])
+
+    // responsive logo sayısı
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 640) {
-                setLogosPerPage(2)
-            } else if (window.innerWidth < 1024) {
-                setLogosPerPage(3)
-            } else {
-                setLogosPerPage(4)
-            }
+            if (window.innerWidth < 640) setLogosPerPage(2)
+            else if (window.innerWidth < 1024) setLogosPerPage(3)
+            else setLogosPerPage(4)
         }
-
         handleResize()
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
-    const totalLogoPages = Math.ceil(companyLogos.length / logosPerPage)
-
-    useEffect(() => {
-        if (reduce) {
-            controls.set("show")
-            return
-        }
-        controls.start(inView ? "show" : "hidden")
-    }, [inView, controls, reduce])
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentLogoIndex((prev) => (prev + 1) % totalLogoPages)
-        }, 5000)
-        return () => clearInterval(timer)
-    }, [totalLogoPages])
-
     const maybe = (v: any) => (reduce ? undefined : v)
 
+    // BUTON TIKLAMALARINDA SAYACI BAŞA AL
+    const resetAndSetIndex = (updater: number | ((p: number) => number)) => {
+        setCurrentLogoIndex(prev => (typeof updater === "function" ? (updater as any)(prev) : updater))
+        scheduleNext() // ⟵ sayaç baştan
+    }
+
     const handlePrevLogo = () => {
-        setCurrentLogoIndex((prev) => (prev - 1 + totalLogoPages) % totalLogoPages)
+        resetAndSetIndex(prev => (prev - 1 + totalLogoPages) % totalLogoPages)
     }
 
     const handleNextLogo = () => {
-        setCurrentLogoIndex((prev) => (prev + 1) % totalLogoPages)
+        resetAndSetIndex(prev => (prev + 1) % totalLogoPages)
     }
 
     const currentLogos = companyLogos.slice(
@@ -119,7 +140,6 @@ export function WhyTamgucSection() {
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
                     {/* SOL TARAF / METİN */}
                     <motion.div className="text-white space-y-4 -mt-5 md:space-y-8" variants={maybe(container)}>
-                        {/* başlık boyutlarını küçülttük mobilde */}
                         <motion.h2
                             className="text-2xl sm:text-3xl md:text-4xl font-bold text-white"
                             variants={maybe(fadeUp)}
@@ -253,11 +273,9 @@ export function WhyTamgucSection() {
                                         {Array.from({ length: totalLogoPages }).map((_, index) => (
                                             <button
                                                 key={index}
-                                                onClick={() => setCurrentLogoIndex(index)}
+                                                onClick={() => resetAndSetIndex(index)} // ⟵ dot tıklamasında da sayaç baştan
                                                 className={`h-2 cursor-pointer rounded-full transition-all duration-300 ${
-                                                    index === currentLogoIndex
-                                                        ? "w-8 bg-white"
-                                                        : "w-2 bg-gray-300"
+                                                    index === currentLogoIndex ? "w-8 bg-white" : "w-2 bg-gray-300"
                                                 }`}
                                                 aria-label={`Go to logo page ${index + 1}`}
                                             />

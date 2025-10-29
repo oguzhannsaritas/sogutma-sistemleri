@@ -27,21 +27,21 @@ export default function KurulumHizmetleriPage() {
                     <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
                         {/* SOL: metin */}
                         <div className="max-w-2xl">
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white  mb-4 md:mb-5 leading-tight">
                                 Soğuk hava deposu kurulum süreci;
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Detaylı planlama, mühendislik hesapları ve enerji verimliliği dikkate alınarak yürütülmesi gereken çok aşamalı bir çalışmadır. Gıda, ilaç, tarım ve lojistik sektörlerinde ihtiyaç duyulan bu sistemler; ürünlerin tazeliğini korur, raf ömrünü uzatır ve maddi kayıpları önler. Bu kapsamlı rehberde, sıfırdan soğuk hava deposu kurulumunun tüm adımlarını detaylı olarak ele alıyoruz.
                                 </p>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                1.İhtiyaç Belirleme ve Alan Planlaması
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 ">
+                                1) İhtiyaç Belirleme ve Alan Planlaması
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Kurulumun ilk adımı, deponun hangi amaçla kullanılacağını netleştirmektir. Soğutulacak ürünlerin türü, hedef sıcaklık aralığı, depo içi sirkülasyon ihtiyacı ve günlük işlem hacmi analiz edilerek;
                                 </p>
@@ -68,11 +68,11 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                2.Uygun Lokasyon ve Arazi Seçimi
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                                2) Uygun Lokasyon ve Arazi Seçimi
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Depo alanı seçiminde aşağıdaki unsurlar dikkate alınır ;
                                 </p>
@@ -104,11 +104,11 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                3.Mimari ve Mekanik Projelendirme
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                                3) Mimari ve Mekanik Projelendirme
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Kurulum aşamasının en kritik bölümü proje çizimi ve mühendislik planlamasıdır. Bu planlamada;
                                 </p>
@@ -145,11 +145,11 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                4.İnşaat ve Yalıtım Uygulamaları
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                                4) İnşaat ve Yalıtım Uygulamaları
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base text-white/95 leading-relaxed">
                                 <p>
                                     Zemin hazırlanır, izolasyon plakaları döşenir ve drenaj eğimleri ayarlanır. Ardından:
                                 </p>
@@ -176,11 +176,11 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                5.Soğutma Sisteminin Montajı
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                                5) Soğutma Sisteminin Montajı
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Soğuk hava deposunun kalbini oluşturan bu sistem, doğru kapasitede ve verimli seçilmelidir. Kurulumda aşağıdaki ekipmanlar entegre edilir:
                                 </p>
@@ -217,21 +217,21 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                6.Elektrik ve Otomasyon Entegrasyonu
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                                6) Elektrik ve Otomasyon Entegrasyonu
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Tesisin tüm aydınlatması, fan motorları, sensörler, sıcaklık izleme üniteleri ve uyarı sistemleri bu aşamada devreye alınır. Soğuk oda kapılarının açık kalma süresi gibi veriler de sensörlerle kontrol edilir. İleri düzey projelerde merkezi kontrol panelleri veya mobil uygulama entegrasyonları yapılabilir.
                                 </p>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                7.Test, Devreye Alma ve Eğitim
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                                7) Test, Devreye Alma ve Eğitim
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Kurulum sonrası şu işlemler gerçekleştirilir:
                                 </p>
@@ -263,11 +263,11 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
-                                8.Bakım ve Servis Planlaması
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                                8) Bakım ve Servis Planlaması
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>
                                     Kurulum tamamlandıktan sonra düzenli bakım protokolleri oluşturulmalıdır:
                                 </p>
@@ -299,11 +299,11 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
                                 Ortalama Kurulum Maliyeti (Örnek Tablo)
                             </h3>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base  text-white/95 leading-relaxed">
                                 <p>Kalem	Ortalama Maliyet (₺)</p>
 
                                 <ul className="space-y-3 sm:space-y-4 text-[12px] sm:text-[13px] md:text-base text-white/95 leading-relaxed">
@@ -343,7 +343,7 @@ export default function KurulumHizmetleriPage() {
                                 </ul>
                             </div>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
                                 Neden Profesyonel Destek Almalısınız?
                             </h3>
 
@@ -351,7 +351,7 @@ export default function KurulumHizmetleriPage() {
                                 Soğuk hava deposu kurmak yalnızca inşa etmekten ibaret değildir.
                             </p>
 
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-2xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
                                 Sıcaklık hassasiyeti yüksek ürünlerin korunması için;
                             </h3>
 
@@ -396,7 +396,7 @@ export default function KurulumHizmetleriPage() {
 
                         {/* SAĞ: görsel */}
                         <div className="w-full flex flex-col items-center md:items-start">
-                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_-10px_rgba(0,0,0,0.8)]">
+                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:top-32 rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_-10px_rgba(0,0,0,0.8)]">
                                 <Image
                                     src="/kurumsal_hizmet.jpeg"
                                     alt="Frigocan üretim tesisi / soğuk hava deposu uygulaması"

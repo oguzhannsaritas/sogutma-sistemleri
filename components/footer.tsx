@@ -334,7 +334,7 @@ export function Footer() {
                     {/* WhatsApp linki */}
                     <Link
                         href="https://wa.me/900000000000"
-                        className="fixed bottom-16 right-4 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors "
+                        className="fixed bottom-16 right-4 bg-green-500 text-white p-4   rounded-full shadow-lg hover:bg-green-600 transition-colors "
                         target="_blank"
                         rel="noopener noreferrer"
                     >

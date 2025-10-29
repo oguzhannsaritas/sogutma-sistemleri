@@ -28,7 +28,7 @@ export default function SogukOdaKapilariPage() {
                     <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
                         {/* GÖRSEL - mobilde önce gelsin, ortalansın */}
                         <div className="order-1 md:order-2 w-full flex justify-center">
-                            <div className="relative w-full max-w-md md:max-w-none aspect-[4/3] sm:aspect-[16/9] rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_-10px_rgba(0,0,0,0.8)]">
+                            <div className="relative w-full max-w-md md:max-w-none aspect-[4/3] md:top-32 sm:aspect-[16/9] rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_-10px_rgba(0,0,0,0.8)]">
                                 <Image
                                     src="/sogukodakapi.jpeg"
                                     alt="Frigocan üretim tesisi / soğuk hava deposu uygulaması"
@@ -42,10 +42,10 @@ export default function SogukOdaKapilariPage() {
                             </div>
                         </div>
 
-                        {/* METİN - mobilde görselden sonra gelsin */}
+                        {/* METİN - mobilde görselden sonra gelsin (üst kısım) */}
                         <div className="order-2 md:order-1 max-w-2xl text-white">
                             {/* Başlık */}
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mb-4 md:mb-5 leading-tight">
                                 MENTEŞELİ ÇARPMA TİP KAPILAR
                             </h3>
 
@@ -85,7 +85,7 @@ export default function SogukOdaKapilariPage() {
                             </ul>
 
                             {/* Başlık 2 */}
-                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-4 md:mb-5 leading-tight">
                                 SÜRGÜLÜ KAPILAR
                             </h3>
 
@@ -116,10 +116,12 @@ export default function SogukOdaKapilariPage() {
                                     <span>Yüzey kaplaması polyester, pvc ve paslanmaz imal edilebilir.</span>
                                 </li>
                             </ul>
+                        </div>
 
-                            {/* Açıklama bloğu */}
+                        {/* UZUN AÇIKLAMA - grid'in ALT SATIRINDA TAM GENİŞLİK */}
+                        <div className="order-3 md:col-span-2 text-white">
                             <div className="space-y-4 sm:space-y-5 text-[12px] sm:text-[13px] md:text-base text-white/95 leading-relaxed">
-                                <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-white mt-8 mb-2 md:mb-4 leading-tight">
+                                <h2 className="text-lg sm:text-xl md:text-3xl lg:text-3xl font-bold text-white mt-8 mb-2 md:mb-4 leading-tight">
                                     SOĞUK DEPO KAPILARI
                                 </h2>
 

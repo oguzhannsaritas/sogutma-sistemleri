@@ -25,11 +25,11 @@ export default function ProjelerPage() {
                     <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                         {/* SOL: metin */}
                         <div className="max-w-2xl">
-                            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
+                            <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-white mb-6 md:mb-8 leading-tight">
                                Projeler
                             </h1>
 
-                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-white/95 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-balance text-white/95 leading-relaxed">
                                 <p>
                                     Frigocan Soğutma Sistemleri olarak, gıdaların sağlıklı ve güvenli bir şekilde korunmasının hayati önem taşıdığının bilincindeyiz. Bu nedenle; ister küçük çaplı bir proje, isterse büyük bir endüstriyel tesis olsun, tüm projelerimize aynı özen ve hassasiyetle yaklaşıyoruz.
 
