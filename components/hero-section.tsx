@@ -95,7 +95,7 @@ export function HeroSection() {
     return (
         <section
             ref={sectionRef}
-            className="snap-start snap-always min-h-screen md:min-h-[600px] lg:min-h-[750px] lg:h-[900px] relative overflow-hidden flex items-center py-12 md:py-16 lg:py-0"
+            className="snap-start snap-always min-h-screen md:min-h-[600px] lg:min-h-[750px] lg:h-[900px] relative overflow-hidden flex items-center py-8 md:py-16 lg:py-0"
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
             aria-roledescription="carousel"
@@ -111,12 +111,12 @@ export function HeroSection() {
             <div className="absolute top-0 left-0 w-1/3 h-full bg-accent transform -skew-x-12 origin-top-left -translate-x-32"></div>
 
             <div className="container mx-auto px-4 h-full relative z-10">
-                <div className="grid md:grid-cols-2 gap-8 h-full items-center">
+                <div className="grid md:grid-cols-2 gap-8 h-full items-center -mt-14">
                     {/* SOL TARAF: METİN */}
                     <div className="text-white space-y-4 md:space-y-6">
                         <h1
                             key={`h1-${index}-${enterTick}`}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-heroText text-white"
+                            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animate-heroText text-white"
                         >
                             {slide.title1}
                             {slide.title2 ? (
@@ -129,7 +129,7 @@ export function HeroSection() {
 
                         <p
                             key={`sub-${index}-${enterTick}`}
-                            className="max-w-xl text-sm sm:text-base md:text-lg text-white/95 animate-heroSub leading-relaxed"
+                            className="max-w-xl text-[13px] sm:text-base md:text-lg text-white/95 animate-heroSub leading-relaxed"
                         >
                             Frigocan çözümleriyle soğuk zinciri güvenle yönetin.
                         </p>
@@ -138,7 +138,7 @@ export function HeroSection() {
                     {/* SAĞ TARAF: GÖRSEL + BUTONLAR */}
                     <div className="flex flex-col items-center">
                         <div
-                            className={`relative h-[350px] sm:h-[450px] md:h-[500px] lg:h-[600px] w-full img-stage ${variant} overflow-hidden rounded-lg`}
+                            className={`relative h-[260px] sm:h-[360px] md:h-[500px] lg:h-[600px] w-full img-stage ${variant} overflow-hidden rounded-lg`}
                         >
                             <div key={`new-${index}-${enterTick}`} className="img-layer img-enter">
                                 <Image
@@ -170,7 +170,7 @@ export function HeroSection() {
                                 onClick={prev}
                                 size="icon"
                                 variant="outline"
-                                className="rounded-full bg-white h-10 w-10 md:h-12 md:w-12"
+                                className="rounded-full bg-white h-8 w-8 md:h-12 md:w-12"
                                 aria-label="Önceki görsel"
                             >
                                 <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
@@ -179,7 +179,7 @@ export function HeroSection() {
                                 onClick={next}
                                 size="icon"
                                 variant="outline"
-                                className="rounded-full bg-white h-10 w-10 md:h-12 md:w-12"
+                                className="rounded-full bg-white h-8 w-8 md:h-12 md:w-12"
                                 aria-label="Sonraki görsel"
                             >
                                 <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />

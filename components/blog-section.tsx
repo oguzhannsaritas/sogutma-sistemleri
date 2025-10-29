@@ -180,7 +180,7 @@ export function BlogSection() {
             {/* İçerik */}
             <div className="container mx-auto px-4 relative z-10 w-full">
                 <motion.h2
-                    className="text-2xl sm:text-3xl -mt-14 md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12"
+                    className="text-2xl sm:text-3xl -mt-20 md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12"
                     variants={maybe(reduce) ?? fadeUp}
                     initial={false}
                 >
