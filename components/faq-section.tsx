@@ -47,7 +47,7 @@ export function FaqSection() {
             <div className="container mx-auto px-4 max-w-5xl w-full">
                 {/* BAŞLIK BOYUTLARI GÜNCEL */}
                 <motion.h2
-                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent mb-8 -mt-24 md:mb-12"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent mb-8 -mt-4 md:mb-12"
                     initial="hidden"
                     animate={controls}
                     variants={maybe(reduce) ?? fadeUp}
@@ -59,7 +59,7 @@ export function FaqSection() {
                     <Accordion type="single" collapsible defaultValue="item-1" className="space-y-4 pb-4">
                         <motion.div
                             variants={maybe(reduce) ?? fadeUp}
-                            className="border border-gray-200  rounded-lg bg-white overflow-hidden"
+                            className="border border-gray-200 rounded-lg bg-white overflow-hidden"
                         >
                             <AccordionItem value="item-1" className="px-6 border-none">
                                 {/* SORU BAŞLIĞI BOYUTLARI GÜNCEL */}

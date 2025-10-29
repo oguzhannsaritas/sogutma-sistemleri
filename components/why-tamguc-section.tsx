@@ -118,7 +118,7 @@ export function WhyTamgucSection() {
             <motion.div className="container mx-auto px-4 relative z-10 h-full" variants={maybe(container)}>
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
                     {/* SOL TARAF / METİN */}
-                    <motion.div className="text-white space-y-4 -mt-20 md:space-y-8" variants={maybe(container)}>
+                    <motion.div className="text-white space-y-4 -mt-5 md:space-y-8" variants={maybe(container)}>
                         {/* başlık boyutlarını küçülttük mobilde */}
                         <motion.h2
                             className="text-2xl sm:text-3xl md:text-4xl font-bold text-white"
