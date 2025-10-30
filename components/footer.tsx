@@ -73,10 +73,10 @@ export function Footer() {
                         <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-white/10 to-transparent transform skew-x-12 origin-top-right"></div>
                     </div>
                 </div>
+                <div className="absolute top-0 left-0 w-1/3 h-full bg-accent transform -skew-x-12 origin-top-left -translate-x-32"></div>
             </motion.div>
 
-            {/* Accent blok */}
-            <div className="absolute top-0 left-0 w-1/3 h-full bg-accent transform -skew-x-12 origin-top-left -translate-x-32"></div>
+
 
             {/* İçerik */}
             <motion.div

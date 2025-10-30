@@ -189,11 +189,12 @@ export function WhyTamgucSection() {
                                 className="cursor-pointer text-accent bg-white w-full sm:w-auto text-xs sm:text-sm md:text-base hover:text-white hover:bg-accent hover:border hover:border-gray-300"
                             >
                                 <a
-                                    href={`mailto:satis@frigocan.com?subject=Soğuk%20Hava%20Deposu%20Bilgi%20Talebi&body=Merhaba%20Frigocan%2C%0A%0A2%20HP%20so%C4%9Fuk%20hava%20deposu%20ihtiyac%C4%B1m%20i%C3%A7in%20bilgi%20ve%20fiyat%20talep%20ediyorum.%0AL%C3%BCtfen%20benimle%20iletisime%20ge%C3%A7in.%0A%0ATe%C5%9Fekk%C3%BCrler.`}
+                                    href={`mailto:satis@frigocan.com?subject=So%C4%9Fuk%20Hava%20Deposu%20Bilgi%20Talebi&body=So%C4%9Fuk%20hava%20deposu%20ve%20%C3%BCr%C3%BCnler%20%20hakk%C4%B1nda%20%20bilgi%20ve%20fiyat%20talep%20ediyorum.%0AL%C3%BCtfen%20benimle%20iletisime%20ge%C3%A7iniz.%0A%0ATe%C5%9Fekk%C3%BCrler.`}
                                 >
                                     Daha fazla bilgi için tıklayınız
                                 </a>
                             </Button>
+
                         </motion.div>
                     </motion.div>
 
@@ -226,9 +227,21 @@ export function WhyTamgucSection() {
                                     Soğutma sistemleri için hemen teklif alın !
                                 </p>
 
-                                <Button className="w-full border cursor-pointer border-gray-300 bg-accent text-white text-xs sm:text-sm md:text-base">
-                                    Teklif Al
-                                </Button>
+                                <motion.div variants={maybe(fadeUp)}>
+                                    <Button
+                                        color="accent"
+                                        asChild
+                                        size="lg"
+                                     className="w-full border cursor-pointer border-gray-300 bg-accent text-white text-xs sm:text-sm md:text-base">
+
+                                        <a
+                                            href={`mailto:satis@frigocan.com?subject=So%C4%9Fuk%20Hava%20Deposu%20Bilgi%20Talebi&body=Merhaba%2C%0ASo%C4%9Futma%20Sistemleri%20ve%20%C3%BCr%C3%BCnleriniz%20%20hakk%C4%B1nda%20%20bilgi%20ve%20fiyat%20teklifi%20almak%20istiyorum.%0AL%C3%BCtfen%20benimle%20iletisime%20ge%C3%A7ermisiniz.%0A%0ATe%C5%9Fekk%C3%BCrler.`}
+                                        >
+                                            Teklif Al
+                                        </a>
+                                    </Button>
+
+                                </motion.div>
                             </Card>
                         </motion.div>
 

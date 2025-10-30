@@ -125,11 +125,11 @@ export default function IletisimPage() {
                                 <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
                                     {/* Ad Soyad */}
                                     <div className="flex flex-col">
-                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-accent/80 mb-1">
+                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-gray-400 mb-1">
                                             Ad Soyad
                                         </label>
                                         <input
-                                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base text-accent outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
+                                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base text-black outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
                                             placeholder="Adınız Soyadınız"
@@ -139,12 +139,12 @@ export default function IletisimPage() {
 
                                     {/* E-posta */}
                                     <div className="flex flex-col">
-                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-accent/80 mb-1">
+                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-gray-400 mb-1">
                                             E-posta
                                         </label>
                                         <input
                                             type="email"
-                                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base text-accent outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
+                                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base text-black outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             placeholder="ornek@firma.com"
@@ -154,11 +154,11 @@ export default function IletisimPage() {
 
                                     {/* Telefon */}
                                     <div className="flex flex-col">
-                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-accent/80 mb-1">
+                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-gray-400 mb-1">
                                             Telefon
                                         </label>
                                         <input
-                                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base text-accent outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
+                                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base  text-black outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
                                             value={phone}
                                             onChange={(e) => setPhone(e.target.value)}
                                             placeholder="+90 ___ ___ __ __"
@@ -167,11 +167,11 @@ export default function IletisimPage() {
 
                                     {/* Mesaj */}
                                     <div className="flex flex-col">
-                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-accent/80 mb-1">
+                                        <label className="text-[11px] sm:text-xs md:text-sm font-medium text-gray-400 mb-1">
                                             Mesajınız
                                         </label>
                                         <textarea
-                                            className="w-full min-h-[100px] rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base text-accent outline-none resize-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
+                                            className="w-full min-h-[100px] rounded-lg border border-gray-300 bg-white px-3 py-2 text-[12px] sm:text-[13px] md:text-base text-black outline-none resize-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition"
                                             value={message}
                                             onChange={(e) => setMessage(e.target.value)}
                                             placeholder="Kurdurmak istediğiniz soğuk oda tipi, m², ürün tipi vb..."
